@@ -1,0 +1,51 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Jun 06 10:53:25 2018
+
+@author: havi
+"""
+
+#函数参数传递的问题
+#对于不可变对象的使用，比如int str型参数
+
+str1 = 'HAVI'
+
+print id(str1)
+
+def strfun(x = 'None'):
+    print 'the adress of x is ' + str(id(x))
+
+    
+def strfun1(x = 'None'):
+    print id(x)
+    x = 'houston'#对于这些不可变得变量，重新赋值就意味着重新开辟一片内存
+    print id(x)
+    print x
+
+def strfun2(x = 'None'):
+    x = x.lower()
+    id(x)
+    print x
+
+strfun(str1)
+
+print id(str1)
+
+strfun1(str1)
+
+print id(str1)
+
+strfun2(str1)
+
+print id(str1)
+
+###############################################################################################
+#179084064
+#the adress of x is 179084064
+#179084064
+#179084064
+#177742752
+#houston
+#179084064
+#havi
+#179084064
